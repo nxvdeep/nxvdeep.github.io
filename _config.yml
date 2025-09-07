@@ -1,0 +1,34 @@
+remote_theme: sproogen/modern-resume-theme
+plugins:
+  - jekyll-remote-theme
+
+name: "Rruben Èhedhi"
+title: "Senior Software/Data Engineer — AI/ML, Spark, Databricks"
+darkmode: true
+
+description: >
+  Portfolio et CV de Rruben Èhedhi — Ingénieur logiciel/données senior (IA/ML, Spark, Databricks);
+  certifications Databricks en cours (Data Engineer Associate/Professional). Bilingue FR/EN (anglais britannique).
+  | Portfolio & CV of Rruben Èhedhi — Senior Software/Data Engineer (AI/ML, Spark, Databricks);
+  Databricks certifications in progress (Data Engineer Associate/Professional). Bilingual FR/EN (British English).
+
+github_username: nxvdeep
+linkedin_username: rruben-ehedhi
+about_profile_image: /assets/images/profile.jpg
+
+about_content: |
+  Ingénieur logiciel/données avec 7+ ans chez Michelin (Databricks/Spark, Python/SQL, Power BI, OSIsoft PI).
+  —
+  Software/Data Engineer with 7+ years at Michelin. (British English throughout.)
+
+content:
+  - title: Projects
+    layout: list
+    content:
+      - layout: left
+        title: Alpha Factor Backtest (Quant)
+        sub_title: Python • backtrader • QuantStats
+        description: |
+          Momentum/value factor with weekly rebalance, costs & slippage; QuantStats tear sheet.
+
+footer_show_references: false
