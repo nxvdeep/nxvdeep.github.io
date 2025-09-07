@@ -1,0 +1,87 @@
+remote_theme: sproogen/modern-resume-theme
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+name: "Rruben Èhedhi"
+title: "Senior Software/Data Engineer — AI/ML, Spark, Databricks"
+email: "rruben.ehedhi@example.com"
+darkmode: true
+
+description: >
+  Portfolio et CV de Rruben Èhedhi — Ingénieur logiciel/données senior (IA/ML, Spark, Databricks);
+  certifications Databricks en cours (Data Engineer Associate/Professional). Bilingue FR/EN (anglais britannique).
+  | Portfolio & CV of Rruben Èhedhi — Senior Software/Data Engineer (AI/ML, Spark, Databricks);
+  Databricks certifications in progress (Data Engineer Associate/Professional). Bilingual FR/EN (British English).
+
+github_username: nxvdeep
+linkedin_username: rruben-ehedhi
+
+# headshot: upload to /assets/images/profile.jpg in the next step
+about_profile_image: /assets/images/profile.jpg
+
+about_content: |
+  Ingénieur logiciel/données avec 7+ ans d’expérience chez Michelin : pipelines Databricks/Spark,
+  ETL Python/SQL, Power BI et intégrations OSIsoft PI. Intérêt pour la fintech, les banques,
+  les hedge funds et l’IA à grande échelle.
+  —
+  Software/Data Engineer with 7+ years at Michelin: Databricks/Spark pipelines,
+  Python/SQL ETL, Power BI, and OSIsoft PI. Interested in fintech, big banks, hedge funds,
+  and large-scale AI platforms. (British English throughout.)
+
+content:
+  - title: Projects
+    layout: list
+    content:
+      - layout: left
+        title: Alpha Factor Backtest (Quant)
+        sub_title: Python • Pandas/NumPy • backtrader • QuantStats
+        caption: 2025
+        link: https://github.com/nxvdeep/alpha-factor
+        link_text: Repo
+        description: |
+          Momentum/value factor on a liquid universe; weekly rebalance, costs & slippage;
+          QuantStats tear sheet (CAGR, Sharpe, Max Drawdown).
+
+      - layout: left
+        title: Manufacturing Analytics Lakehouse
+        sub_title: Databricks • Delta • Power BI
+        caption: 2024
+        description: |
+          ETL & feature pipelines feeding BI/ML; semantic layer for KPIs; CI/CD.
+
+      - layout: left
+        title: PI Telemetry → Predictive Maintenance
+        sub_title: OSIsoft PI • Anomaly detection
+        caption: 2024
+        description: |
+          PI tags integration and early-fault signals to reduce downtime.
+
+  - title: Experience
+    layout: list
+    content:
+      - layout: left
+        title: Michelin
+        sub_title: Senior Software/Data Engineer
+        caption: Nova Scotia • 2023–Present
+        description: |
+          • Designed & optimised ETL/data models; contributed to HPC work.
+          • Shipped production dashboards & ML prototypes with measurable ROI.
+          • Pushed DevOps/CI/CD practices across analytics teams.
+
+  - title: Education
+    layout: list
+    content:
+      - layout: left
+        title: St. Francis Xavier University (StFX)
+        sub_title: M.Applied Computer Science — ML & Data Science (minor in Statistics)
+        caption: Antigonish, NS
+
+  - title: Skills
+    layout: text
+    content: |
+      **Data/AI:** Databricks, Spark, Python, SQL, Power BI, OSIsoft PI  
+      **Infra/DevOps:** CI/CD, GitHub Actions, Git, Windows/Linux  
+      **Quant/Finance:** Factor research, backtesting, risk & monitoring
+
+footer_show_references: false
