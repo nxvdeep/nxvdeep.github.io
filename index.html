@@ -13,67 +13,89 @@
 
   <style>
     :root{
-      --bg:#0a0e14; --ink:#e7edf6; --muted:#a1b2c9; --card:#111722; --line:#1d2736; --brand:#8ed0ff; --accent:#a6ffd9;
+      /* Default = Dark theme */
+      --bg:#0a0e14; --ink:#e7edf6; --muted:#a1b2c9; --card:#111722; --line:#1d2736;
+      --brand:#8ed0ff; --accent:#a6ffd9;
+      /* Button + chip system (high-contrast) */
+      --btn-bg:#0e1521; --btn-ink:#ffffff; --btn-border:#314052; --btn-bg-hover:#121a28;
+      --chip-bg:transparent; --chip-ink:#d6e8ff; --chip-border:var(--line);
+      /* Accents for sections */
+      --quant:#7cc4ff; --lake:#90f7d2; --pi:#ffd76a; --apps:#c9b4ff;
+      --font-serif:'EB Garamond', Georgia, 'Times New Roman', serif;
+      --font-sans:Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    :root[data-theme="light"]{
+      --bg:#f6f9ff; --ink:#0b1626; --muted:#4a6077; --card:#ffffff; --line:#d7e2f0;
+      --brand:#005fcc; --accent:#007a5a;
+      --btn-bg:#ffffff; --btn-ink:#0b1626; --btn-border:#cfd9e6; --btn-bg-hover:#edf5ff;
+      --chip-bg:#f5f9ff; --chip-ink:#0b223a; --chip-border:#cfe0f5;
+      --quant:#005fcc; --lake:#0a8c62; --pi:#b27100; --apps:#5a4fbf;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-serif);line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:1120px;margin:0 auto;padding:28px}
-    
+
     /* Nav */
     .nav{position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.2) blur(6px); background:linear-gradient(to bottom,rgba(10,14,20,.85),rgba(10,14,20,.55)); border-bottom:1px solid var(--line)}
+    :root[data-theme="light"] .nav{background:linear-gradient(to bottom,rgba(246,249,255,.9),rgba(246,249,255,.6))}
     .nav>.inner{max-width:1120px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font-family:"EB Garamond",serif;font-weight:700;letter-spacing:.2px}
-    .nav a.btn{border:1px solid var(--line);padding:8px 12px;border-radius:12px;color:var(--ink)}
-    .nav a.btn:hover{background:#0f1622}
+    .brand{font-family:var(--font-serif);font-weight:700;letter-spacing:.2px}
+    .nav a.btn{border:1px solid var(--btn-border);padding:8px 12px;border-radius:12px;color:var(--btn-ink);background:var(--btn-bg);font-family:var(--font-sans)}
+    .nav a.btn:hover{background:var(--btn-bg-hover)}
 
     /* Hero */
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;margin:40px auto}
-    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.18em;font-size:12px}
-    h1{font-family:"EB Garamond",serif;font-weight:700;font-size:clamp(38px,6vw,64px);line-height:1.08;margin:6px 0 12px}
+    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-family:var(--font-sans)}
+    h1{font-weight:700;font-size:clamp(38px,6vw,64px);line-height:1.08;margin:6px 0 12px}
     .lede{font-size:18px;margin:0 0 12px}
     .chiprow{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
-    .chip{font-size:13px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#d6e8ff;white-space:nowrap}
+    .chip{font-size:13px;border:1px solid var(--chip-border);padding:6px 10px;border-radius:999px;color:var(--chip-ink);background:var(--chip-bg);white-space:nowrap;font-family:var(--font-sans)}
     .cta{display:flex;gap:10px;margin-top:12px}
-    .btn{border:1px solid var(--line);background:#0e1521;color:var(--ink);padding:10px 14px;border-radius:14px}
-    .btn:hover{background:#121a28}
+    .btn{border:1px solid var(--btn-border);background:var(--btn-bg);color:var(--btn-ink);padding:10px 14px;border-radius:14px;font-family:var(--font-sans)}
+    .btn:hover{background:var(--btn-bg-hover)}
+    .btn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 
     /* Portrait */
     .portrait{position:relative;display:grid;place-items:center}
     .portrait .frame{width:min(360px,80%);aspect-ratio:1/1.08;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#0e1521;box-shadow:0 10px 30px rgba(0,0,0,.35)}
     .portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.02) contrast(1.02)}
-    .badge{position:absolute;bottom:-12px;left:12px;background:#0f1a28;border:1px solid var(--line);padding:8px 12px;border-radius:12px;color:var(--muted);font-size:12px}
+    .badge{position:absolute;bottom:-12px;left:12px;background:var(--card);border:1px solid var(--line);padding:8px 12px;border-radius:12px;color:var(--muted);font-size:12px;font-family:var(--font-sans)}
 
     /* Sections */
     section{margin:32px 0}
     .section-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:14px}
-    .section-title h2{font-family:"EB Garamond",serif;margin:0;font-size:28px}
+    .section-title h2{margin:0;font-size:28px}
 
-    /* Projects grid */
+    /* Cards & grids */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;transition:.2s transform,.2s box-shadow}
     .card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.28)}
-    .eyebrow{color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-size:11px}
-    .card h3{margin:6px 0;font-size:18px}
+    .eyebrow{color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-size:11px;font-family:var(--font-sans)}
+    .card h3{margin:6px 0;font-size:20px}
     .meta{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
-    .tag{font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:#cfe2ff}
+    .tag{font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--chip-ink);font-family:var(--font-sans)}
     .card .actions{display:flex;gap:10px;margin-top:8px}
+
+    /* Themed cards */
+    .card.quant{border-color:var(--quant); box-shadow:0 1px 0 var(--quant) inset}
+    .card.lakehouse{border-color:var(--lake); box-shadow:0 1px 0 var(--lake) inset}
+    .card.pi{border-color:var(--pi); box-shadow:0 1px 0 var(--pi) inset}
+    .card.apps{border-color:var(--apps); box-shadow:0 1px 0 var(--apps) inset}
+    .tag.quant{border-color:var(--quant)}
+    .tag.lake{border-color:var(--lake)}
+    .tag.pi{border-color:var(--pi)}
+    .tag.apps{border-color:var(--apps)}
 
     /* Featured project row */
     .featured{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
     .featured .preview{border-radius:16px;border:1px solid var(--line);overflow:hidden;background:#0e1521;min-height:220px}
-    .preview iframe,.preview img{width:100%;height:100%;display:block;object-fit:cover}
+    .preview img{width:100%;height:100%;display:block;object-fit:cover}
 
     /* Footer */
     footer{opacity:.75;font-size:13px;margin:34px 0 14px}
-
-    /* Light Mode */
-    body.light{--bg:#f6f9ff;--ink:#0b1626;--muted:#4a6077;--card:#ffffff;--line:#d7e2f0;--brand:#005fcc;--accent:#007a5a}
-    body.light .nav{background:linear-gradient(to bottom,rgba(246,249,255,.9),rgba(246,249,255,.6))}
-    body.light .nav a.btn{border-color:#d7e2f0}
-    body.light .btn:hover{background:#edf5ff}
 
     /* Responsive */
     @media (max-width:980px){
@@ -91,7 +113,7 @@
       <div style="display:flex;gap:10px;align-items:center">
         <a class="btn" href="#projects">Projects</a>
         <a class="btn" href="#contact">Contact</a>
-        <a class="btn" id="theme">Toggle theme</a>
+        <a class="btn" id="theme" role="button" aria-pressed="false" aria-label="Toggle colour theme">Light mode</a>
       </div>
     </div>
   </div>
@@ -129,7 +151,7 @@
 
     <!-- Featured project (large row) -->
     <section class="featured" id="featured">
-      <div class="card">
+      <div class="card quant">
         <div class="eyebrow">Featured • Quant • Backtesting</div>
         <h2 style="margin:.2rem 0 .4rem;font-family:'EB Garamond',serif">Alpha Factor Backtest</h2>
         <p>Momentum/value factor on a liquid universe with weekly rebalance, realistic costs & slippage. Generates a QuantStats tear sheet (CAGR, Sharpe, MDD). Includes notebook + CLI.</p>
@@ -158,21 +180,21 @@
         </div>
       </div>
       <div class="grid">
-        <article class="card">
+        <article class="card lakehouse">
           <div class="eyebrow">Lakehouse • BI</div>
           <h3>Manufacturing Analytics</h3>
           <p>Databricks pipelines feeding a semantic layer for KPIs & Power BI dashboards; GitHub Actions CI/CD.</p>
           <div class="meta"><span class="tag">Databricks</span><span class="tag">Delta</span><span class="tag">Power BI</span></div>
           <div class="actions"><a class="btn" href="#">Architecture</a></div>
         </article>
-        <article class="card">
+        <article class="card pi">
           <div class="eyebrow">PI System • Predictive</div>
           <h3>Telemetry → Insight</h3>
           <p>PI tag ingestion, feature engineering & anomaly detection for early fault signals and downtime reduction.</p>
           <div class="meta"><span class="tag">OSIsoft PI</span><span class="tag">Python</span><span class="tag">Anomaly</span></div>
           <div class="actions"><a class="btn" href="#">Notebook</a></div>
         </article>
-        <article class="card">
+        <article class="card apps">
           <div class="eyebrow">Apps • UX</div>
           <h3>PPC Company Cars Booking</h3>
           <p>Interactive scheduling with 15‑min slots, slot lock, theme toggle, tooltips, and real‑time updates.</p>
@@ -193,14 +215,31 @@
   </main>
 
   <script>
-    // Year + theme toggle
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const setTheme = m => document.body.classList.toggle('light', m==='light');
-    setTheme(localStorage.theme||'');
-    document.getElementById('theme').onclick = () => {
-      const next = document.body.classList.contains('light') ? '' : 'light';
-      setTheme(next); localStorage.theme = next;
-    };
-  </script>
+  (function(){
+    const root = document.documentElement;
+    const btn = document.getElementById('theme');
+    const stored = localStorage.getItem('theme');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const initial = stored || (prefersLight ? 'light' : 'dark');
+    root.dataset.theme = initial;
+    updateBtn();
+
+    btn && btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+      root.dataset.theme = next;
+      localStorage.setItem('theme', next);
+      updateBtn();
+    });
+
+    function updateBtn(){
+      if(!btn) return;
+      const isLight = root.dataset.theme === 'light';
+      btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+      // Button label shows the *target* mode
+      btn.textContent = isLight ? 'Dark mode' : 'Light mode';
+    }
+  })();
+</script>
 </body>
 </html>
