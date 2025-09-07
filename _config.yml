@@ -1,7 +1,7 @@
 remote_theme: sproogen/modern-resume-theme
 plugins:
   - jekyll-remote-theme
-
+ 
 name: "Rruben Èhedhi"
 title: "Senior Software/Data Engineer — AI/ML, Spark, Databricks"
 darkmode: true
