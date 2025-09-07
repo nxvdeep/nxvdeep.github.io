@@ -1,144 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rruben Èhedhi — Data/AI Engineer</title>
-<meta name="description" content="Portfolio • Data/AI Engineer (Databricks/Spark, Python/SQL, Power BI, OSIsoft PI). Quant/fintech projects. Bilingual FR/EN; British English style." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rruben Èhedhi — Data/AI Engineer</title>
+  <meta name="description" content="Portfolio of Rruben Èhedhi — Senior Software/Data Engineer (AI/ML • Databricks/Spark • Python/SQL • Power BI • OSIsoft PI). Quant/fintech focus. FR/EN." />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --bg:#0b0e13; --card:#111723; --ink:#e8edf5; --muted:#9fb0c9;
-  --brand:#7cc4ff; --accent:#a5ffd6; --line:#1f2a39;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  line-height:1.6;
-}
-.wrap{max-width:1060px;margin:0 auto;padding:28px}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-nav{
-  display:flex; align-items:center; justify-content:space-between; gap:14px;
-}
-.brand{
-  font-family:"EB Garamond", serif; font-weight:600; letter-spacing:.2px; font-size:22px;
-}
-.btn{border:1px solid var(--line); background:#0d1420; color:var(--ink);
-  padding:10px 14px; border-radius:14px; cursor:pointer}
-.btn:hover{background:#121a28}
+  <style>
+    :root{
+      --bg:#0a0e14; --ink:#e7edf6; --muted:#a1b2c9; --card:#111722; --line:#1d2736; --brand:#8ed0ff; --accent:#a6ffd9;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px}
+    
+    /* Nav */
+    .nav{position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.2) blur(6px); background:linear-gradient(to bottom,rgba(10,14,20,.85),rgba(10,14,20,.55)); border-bottom:1px solid var(--line)}
+    .nav>.inner{max-width:1120px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:"EB Garamond",serif;font-weight:700;letter-spacing:.2px}
+    .nav a.btn{border:1px solid var(--line);padding:8px 12px;border-radius:12px;color:var(--ink)}
+    .nav a.btn:hover{background:#0f1622}
 
-.hero{
-  display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center; margin:36px 0;
-}
-.card{background:var(--card); border:1px solid var(--line); border-radius:22px; padding:24px}
-.kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.18em; font-size:12px}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;margin:40px auto}
+    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.18em;font-size:12px}
+    h1{font-family:"EB Garamond",serif;font-weight:700;font-size:clamp(38px,6vw,64px);line-height:1.08;margin:6px 0 12px}
+    .lede{font-size:18px;margin:0 0 12px}
+    .chiprow{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+    .chip{font-size:13px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#d6e8ff;white-space:nowrap}
+    .cta{display:flex;gap:10px;margin-top:12px}
+    .btn{border:1px solid var(--line);background:#0e1521;color:var(--ink);padding:10px 14px;border-radius:14px}
+    .btn:hover{background:#121a28}
 
-h1{
-  font-family:"EB Garamond", serif; font-weight:600;
-  font-size:clamp(34px,5vw,54px); line-height:1.1; margin:0 0 10px;
-}
-h2{font-family:"EB Garamond", serif; font-weight:600; margin:0 0 8px}
-p.big{font-size:18px; margin:.2rem 0 1rem}
-.chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
-.chip{font-size:13px; border:1px solid var(--line); padding:6px 10px; border-radius:999px; color:#d6e8ff}
+    /* Portrait */
+    .portrait{position:relative;display:grid;place-items:center}
+    .portrait .frame{width:min(360px,80%);aspect-ratio:1/1.08;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#0e1521;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.02) contrast(1.02)}
+    .badge{position:absolute;bottom:-12px;left:12px;background:#0f1a28;border:1px solid var(--line);padding:8px 12px;border-radius:12px;color:var(--muted);font-size:12px}
 
-.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-.project h3{margin:0 0 6px; font-size:18px; font-weight:600}
-.footer{opacity:.75; font-size:13px; margin:30px 0 10px}
+    /* Sections */
+    section{margin:32px 0}
+    .section-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:14px}
+    .section-title h2{font-family:"EB Garamond",serif;margin:0;font-size:28px}
 
-@media (max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
-}
-</style>
+    /* Projects grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;transition:.2s transform,.2s box-shadow}
+    .card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.28)}
+    .eyebrow{color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-size:11px}
+    .card h3{margin:6px 0;font-size:18px}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+    .tag{font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:#cfe2ff}
+    .card .actions{display:flex;gap:10px;margin-top:8px}
+
+    /* Featured project row */
+    .featured{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .featured .preview{border-radius:16px;border:1px solid var(--line);overflow:hidden;background:#0e1521;min-height:220px}
+    .preview iframe,.preview img{width:100%;height:100%;display:block;object-fit:cover}
+
+    /* Footer */
+    footer{opacity:.75;font-size:13px;margin:34px 0 14px}
+
+    /* Light Mode */
+    body.light{--bg:#f6f9ff;--ink:#0b1626;--muted:#4a6077;--card:#ffffff;--line:#d7e2f0;--brand:#005fcc;--accent:#007a5a}
+    body.light .nav{background:linear-gradient(to bottom,rgba(246,249,255,.9),rgba(246,249,255,.6))}
+    body.light .nav a.btn{border-color:#d7e2f0}
+    body.light .btn:hover{background:#edf5ff}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .featured{grid-template-columns:1fr}
+      .portrait .frame{width:min(420px,90%)}
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <nav>
-    <div class="brand">Rruben Èhedhi</div>
-    <div style="display:flex; gap:10px">
-      <a class="btn" href="#projects">Projects</a>
-      <a class="btn" href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <section class="card">
-      <div class="kicker">Portfolio • FR/EN</div>
-      <h1>Data/AI Engineer for production-grade analytics.</h1>
-      <p class="big">
-        <em>EN:</em> Senior Software/Data Engineer (7+ years, Michelin) specialising in
-        Databricks/Spark, Python/SQL, Power BI, and OSIsoft PI. Exploring quant/fintech & AI platform roles.
-        <br><em>FR:</em> Ingénieur logiciel/données (7+ ans, Michelin) spécialisé en Databricks/Spark,
-        Python/SQL, Power BI et OSIsoft PI. Intérêt pour la fintech et l’IA à grande échelle.
-      </p>
-      <div class="chips">
-        <span class="chip">Databricks & Spark</span>
-        <span class="chip">Python / SQL</span>
-        <span class="chip">Power BI</span>
-        <span class="chip">OSIsoft PI</span>
-        <span class="chip">CI/CD</span>
-        <span class="chip">Quant & Fintech</span>
+  <div class="nav">
+    <div class="inner">
+      <div class="brand">Rruben Èhedhi</div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn" id="theme">Toggle theme</a>
       </div>
-      <p style="margin-top:16px">
-        <a class="btn" href="/resume.pdf">Résumé (PDF)</a>
-        <a class="btn" href="mailto:rruben.ehedhi@example.com">Email</a>
-        <a class="btn" href="https://github.com/nxvdeep">GitHub</a>
-      </p>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <header class="hero">
+      <section>
+        <div class="kicker">Portfolio • FR/EN</div>
+        <h1>Data/AI Engineer for production‑grade analytics.</h1>
+        <p class="lede"><em>EN:</em> Senior Software/Data Engineer (7+ years, Michelin) specialising in Databricks/Spark, Python/SQL, Power BI, and OSIsoft PI. Exploring quant/fintech & AI platform roles.
+        <br><em>FR:</em> Ingénieur logiciel/données (7+ ans, Michelin) spécialisé en Databricks/Spark, Python/SQL, Power BI et OSIsoft PI. Intérêt pour la fintech et l’IA à grande échelle.</p>
+        <div class="chiprow">
+          <span class="chip">Databricks & Spark</span>
+          <span class="chip">Python / SQL</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">OSIsoft PI</span>
+          <span class="chip">CI/CD</span>
+          <span class="chip">Quant & Fintech</span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="resume.pdf">Résumé (PDF)</a>
+          <a class="btn" href="mailto:rruben.ehedhi@example.com">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/rruben-ehedhi/">LinkedIn</a>
+          <a class="btn" href="https://github.com/nxvdeep">GitHub</a>
+        </div>
+      </section>
+      <aside class="portrait">
+        <div class="frame">
+          <!-- Place your photo at /assets/images/profile.jpg -->
+          <img src="assets/images/profile.jpg" alt="Portrait of Rruben Èhedhi"/>
+        </div>
+        <div class="badge">Nova Scotia → GTA‑ready • British English style</div>
+      </aside>
+    </header>
+
+    <!-- Featured project (large row) -->
+    <section class="featured" id="featured">
+      <div class="card">
+        <div class="eyebrow">Featured • Quant • Backtesting</div>
+        <h2 style="margin:.2rem 0 .4rem;font-family:'EB Garamond',serif">Alpha Factor Backtest</h2>
+        <p>Momentum/value factor on a liquid universe with weekly rebalance, realistic costs & slippage. Generates a QuantStats tear sheet (CAGR, Sharpe, MDD). Includes notebook + CLI.</p>
+        <div class="meta">
+          <span class="tag">Python</span><span class="tag">Pandas/NumPy</span><span class="tag">backtrader</span><span class="tag">QuantStats</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/nxvdeep/alpha-factor">Repo</a>
+          <a class="btn" href="#">Case study</a>
+        </div>
+      </div>
+      <div class="preview">
+        <!-- Replace with an image or an embedded chart/screenshot of the tear sheet -->
+        <img src="assets/images/alpha-preview.jpg" alt="Alpha factor performance preview"/>
+      </div>
     </section>
 
-    <aside class="card">
-      <h2>Focus</h2>
-      <ul>
-        <li>AI/ML pipelines on Databricks / Delta Lake.</li>
-        <li>Real-time telemetry & predictive maintenance (PI System).</li>
-        <li>Clean, testable data platforms and executive-ready dashboards.</li>
-      </ul>
-    </aside>
-  </header>
+    <!-- Projects grid -->
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <div style="display:flex;gap:8px">
+          <a class="btn" href="#quant">Quant</a>
+          <a class="btn" href="#lakehouse">Lakehouse</a>
+          <a class="btn" href="#pi">PI System</a>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="eyebrow">Lakehouse • BI</div>
+          <h3>Manufacturing Analytics</h3>
+          <p>Databricks pipelines feeding a semantic layer for KPIs & Power BI dashboards; GitHub Actions CI/CD.</p>
+          <div class="meta"><span class="tag">Databricks</span><span class="tag">Delta</span><span class="tag">Power BI</span></div>
+          <div class="actions"><a class="btn" href="#">Architecture</a></div>
+        </article>
+        <article class="card">
+          <div class="eyebrow">PI System • Predictive</div>
+          <h3>Telemetry → Insight</h3>
+          <p>PI tag ingestion, feature engineering & anomaly detection for early fault signals and downtime reduction.</p>
+          <div class="meta"><span class="tag">OSIsoft PI</span><span class="tag">Python</span><span class="tag">Anomaly</span></div>
+          <div class="actions"><a class="btn" href="#">Notebook</a></div>
+        </article>
+        <article class="card">
+          <div class="eyebrow">Apps • UX</div>
+          <h3>PPC Company Cars Booking</h3>
+          <p>Interactive scheduling with 15‑min slots, slot lock, theme toggle, tooltips, and real‑time updates.</p>
+          <div class="meta"><span class="tag">Power Apps</span><span class="tag">SharePoint</span><span class="tag">UX</span></div>
+          <div class="actions"><a class="btn" href="#">Case study</a></div>
+        </article>
+      </div>
+    </section>
 
-  <section id="projects" class="grid">
-    <article class="card project">
-      <div class="kicker">Quant • Backtesting</div>
-      <h3>Alpha Factor Backtest</h3>
-      <p>Momentum/value factor on a liquid universe with weekly rebalance, costs, slippage; QuantStats tear sheet.</p>
-      <p><a href="https://github.com/nxvdeep/alpha-factor">Repo →</a></p>
-    </article>
+    <section id="contact">
+      <div class="card">
+        <h2 style="font-family:'EB Garamond',serif;margin-top:0">Contact</h2>
+        <p>Email: <a href="mailto:rruben.ehedhi@example.com">rruben.ehedhi@example.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/rruben-ehedhi/">/in/rruben-ehedhi</a></p>
+      </div>
+    </section>
 
-    <article class="card project">
-      <div class="kicker">Lakehouse • BI</div>
-      <h3>Manufacturing Analytics</h3>
-      <p>Databricks pipelines feeding a semantic layer for KPIs and Power BI dashboards; CI/CD.</p>
-      <p><a href="#">Architecture →</a></p>
-    </article>
+    <footer>© <span id="y"></span> Rruben Èhedhi • Deployed on GitHub Pages • FR/EN</footer>
+  </main>
 
-    <article class="card project">
-      <div class="kicker">PI System • Predictive</div>
-      <h3>Telemetry to Insight</h3>
-      <p>PI tag ingestion, feature engineering, anomaly detection for early fault signals and downtime reduction.</p>
-      <p><a href="#">Notebook →</a></p>
-    </article>
-  </section>
-
-  <section id="contact" class="card" style="margin-top:24px">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:rruben.ehedhi@example.com">rruben.ehedhi@example.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/rruben-ehedhi/">/in/rruben-ehedhi</a></p>
-  </section>
-
-  <p class="footer">© <span id="y"></span> Rruben Èhedhi • British English style • Deployed on GitHub Pages</p>
-</div>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <script>
+    // Year + theme toggle
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const setTheme = m => document.body.classList.toggle('light', m==='light');
+    setTheme(localStorage.theme||'');
+    document.getElementById('theme').onclick = () => {
+      const next = document.body.classList.contains('light') ? '' : 'light';
+      setTheme(next); localStorage.theme = next;
+    };
+  </script>
 </body>
 </html>
